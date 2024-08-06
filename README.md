@@ -1,5 +1,5 @@
 
-# Wilp Frontend Project
+# Wilo Frontend
 
 ## Prerequisites
 
