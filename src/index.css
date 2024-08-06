@@ -1,0 +1,110 @@
+/* Button styling */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  
+  a:hover {
+    color: #747bff;
+  }
+  
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Dashboard */
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: gray;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh; /* Full viewport height */
+  gap: 20px;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.left, .middle, .right {
+  height: calc(100vh - 100px); /* 100vh minus the total padding */
+  box-sizing: border-box;
+}
+
+.left {
+  background-color: white;
+  width: 20%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-radius: 2px;
+}
+
+.right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20%;
+  gap: 20;
+}
+
+.right div {
+  width: 250px;
+  height: 200px;
+  background-color: red;
+}
+
+.file {
+  width: 100%;
+  background-color: gray;
+  height: 40px;
+  border-radius: 2px;
+  padding: 5px;
+  text-align: left;
+}
+
+.middle {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.graph {
+  width: 100%;
+  flex-grow: 1;
+  background-color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
