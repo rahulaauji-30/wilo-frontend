@@ -1,110 +1,192 @@
-/* Button styling */
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+body {
+  overflow: hidden;
+  background-color: RGB(55, 54, 68);
 }
 
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-/* Light mode adjustments */
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  
-  a:hover {
-    color: #747bff;
-  }
-  
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-/* Dashboard */
-html, body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  background-color: gray;
-}
-
-.main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 100vh; /* Full viewport height */
-  gap: 20px;
-  padding: 50px;
-  box-sizing: border-box;
-}
-
-.left, .middle, .right {
-  height: calc(100vh - 100px); /* 100vh minus the total padding */
-  box-sizing: border-box;
-}
-
+/* CSS for the left class */
 .left {
-  background-color: white;
-  width: 20%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 25%;
+  height: 100vh; /* Full height of the viewport */
+  float: left;
+  background-color: #1f766e; /* Light grey background color */
   padding: 10px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  overflow: hidden; /* Prevent the parent container from scrolling */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  border-radius: 2px;
+  overflow-y: auto;
+  scrollbar-width: thin; /* Can be 'auto', 'thin', or 'none' */
+  scrollbar-color:  #1f766e  #34c5b7; /* thumb color, track color */
 }
 
-.right{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 20%;
-  gap: 20;
+/* WebKit browser scrollbar styling */
+.left::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
 }
 
-.right div {
-  width: 250px;
-  height: 200px;
-  background-color: red;
+.left::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+  border-radius: 10px; /* Rounded corners of the scrollbar track */
 }
 
+.left::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners of the scrollbar thumb */
+}
+
+.left::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb when hovered */
+}
+
+/* CSS for the file class */
 .file {
-  width: 100%;
-  background-color: gray;
-  height: 40px;
-  border-radius: 2px;
-  padding: 5px;
-  text-align: left;
+  background-color:  #34c5b7; /* Light green background color */
+  padding: 5px 10px;
+  margin: 10px 0;
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center the text */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+  box-sizing: border-box;
+  border: 2px solid #FFA500;
 }
 
+.file:hover {
+  background-color: #FFA500; /* Slightly darker green on hover */
+  box-shadow: 0 4px 10px #00000033; /* Increase shadow on hover */
+  transform: scale(1.01); /* Slightly enlarge the element on hover */
+  transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+/* CSS for the middle class */
 .middle {
-  width: 60%;
+  overflow: hidden;
+  width: 50%;
+  height: 100vh; /* Full height of the viewport */
+  float: left;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around; /* Space the graphs evenly */
+  padding: 10px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  background-color: #1f766e; /* White background color */
 }
 
-.graph {
-  width: 100%;
-  flex-grow: 1;
-  background-color: white;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+/* CSS for the vibration and temp classes */
+.middle .vibration,
+.middle .temp {
+  flex: 1; /* Allow the graphs to grow and shrink equally */
+  margin: 10px 0; /* Vertical margin between graphs */
+  padding: 10px;
+  border: 5px solid #FFA500;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+  display: flex;
+  align-items: center; /* Center graph vertically */
+  justify-content: center; /* Center graph horizontally */
+  background-color: #34c5b7;
+}
+
+/* CSS for the right class */
+.right {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 25%;
+  height: 100vh; /* Full height of the viewport */
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Space the sections evenly */
+  padding: 10px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  background-color: #1f766e; /* Light grey background color */
+  
+}
+
+/* CSS for the temperature, vibrations, performance, and date classes */
+.right .temperature,
+.right .vibrations,
+.right .performance,
+.right .date {
+  padding: 20px;
+  height: 150px;
+  margin: 10px 0; /* Vertical margin between sections */
+  border: 1px solid #0f0f0f; /* Light grey border */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  background-color: #fff; /* White background color */
+  
+}
+
+.right .temperature {
+  /* Additional styles for temperature section if needed */
+  padding: 20px;
+    margin: 10px 0; /* Vertical margin between sections */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    background-color: #34c5b7; /* White background color */
+    font-size: 24px; /* Font size for the temperature */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Dark text color */
+    border: 5px solid #FFA500;
+}
+
+.right .vibrations {
+  padding: 20px;
+    margin: 10px 0; /* Vertical margin between sections */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    background-color: #34c5b7; /* White background color */
+    font-size: 24px; /* Font size for the vibrations */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Dark text color */
+    border: 5px solid #FFA500;
+}
+
+.right .performance {
+  padding: 20px;
+    margin: 10px 0; /* Vertical margin between sections */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    background-color: #34c5b7; /* White background color */
+    font-size: 24px; /* Font size for the performance */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Dark text color */
+    position: relative;
+    border: 5px solid #FFA500;
+}
+
+.right .date {
+  padding: 20px;
+    margin: 10px 0; /* Vertical margin between sections */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    background-color: #34c5b7; /* White background color */
+    font-size: 24px; /* Font size for the date */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Dark text color */
+    text-align: center; /* Center the text */
+    border: 5px solid #FFA500;
 }

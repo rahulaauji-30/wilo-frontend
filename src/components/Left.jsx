@@ -7,6 +7,17 @@ const Left = ()=>{
         <Files/>
         <Files/>
         <Files/>
+        <Files/>
+        <Files/>
+        <Files/>
+        <Files/>
+        <Files/>
+        <Files/>
+        <Files/>
+        <Files/>
+        <Files/>
+        <Files/>
+        <Files/>
         </div>
     </>)
 }
