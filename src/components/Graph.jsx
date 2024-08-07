@@ -2,7 +2,7 @@
 const Graph = ()=>{
     return(<>
         <div className="graph">
-        <h1>Hello Graph</h1>
+        <h1>Graphs</h1>
         </div>
     </>)
 }
