@@ -3,10 +3,10 @@
 const Right = ()=>{
     return(<>
         <div className="right">
-            <div className="temperature"></div>
-            <div className="vibrations"></div>
-            <div className="performance"></div>
-            <div className="date"></div>
+        <div className="temperature">Temp</div>
+            <div className="vibrations">Vib</div>
+            <div className="performance">Perf</div>
+            <div className="date">Date</div>
         </div>
     </>)
 }
